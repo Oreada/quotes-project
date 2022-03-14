@@ -1,0 +1,161 @@
+// Файл обнуляющих стилей
+@import "_nullstyle";
+
+body {
+	height: 100%;
+	line-height: 1;
+	font-size: 20px;
+	color: darken(#808000, 20%);
+	// font-family: "Open Sans";
+	// font-family: "Amatic SC";
+	font-family: Neucha;
+	background: #8a9a5b;
+}
+// ОБОЛОЧКА
+.wrapper {
+	width: 100%;
+	min-height: 100%;
+	overflow: hidden;
+
+	display: flex;
+	flex-direction: column;
+}
+// ОСНОВНАЯ СЕТКА
+._container {
+	max-width: 1200px;
+	padding: 0px 15px; //! отступы безопасности
+	margin: 0px auto; //! позволяет контейнеру выстроиться посередине
+	box-sizing: content-box;
+	//! Переключили контейнер с border-box на content-box после добавления паддинга, чтобы паддинг не считался частью max-width
+}
+
+//================================================================================================
+
+// Подключение header
+@import "_header";
+
+//================================================================================================
+
+// ОСНОВНОЙ БЛОК: CONTENT
+
+//================================================================================================
+
+//===== main ===============================================================================
+.main {
+	flex: 1 1 auto;
+
+	margin-top: 20px;
+}
+
+.main__box {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	margin: 0px -20px;
+
+	@media (max-width: 700px) {
+		flex-direction: column;
+	}
+}
+
+//======== visual ================================================================================
+.visual {
+	flex: 1 1 50%;
+	padding: 0px 20px;
+}
+
+.visual__image {
+	height: 400px;
+	// background-image: url(img/main/levitan_1.jpg);
+	background-repeat: no-repeat;
+	background-size: contain;
+	// background-size: cover;
+
+	background-position: center center;
+
+	margin-bottom: 30px;
+
+	@media (max-width: 1023px) {
+		height: 300px;
+	}
+}
+
+.visual__btns {
+	align-self: stretch;
+	display: flex;
+	justify-content: space-around;
+
+	color: inherit;
+
+	& > *:not(:last-child) {
+		margin: 0px 5px 0px 0px;
+	}
+}
+
+.btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	background-color: #fffdd0;
+	color: inherit;
+	font-family: inherit;
+	font-size: inherit;
+
+	width: 200px;
+	height: 50px;
+	border-radius: 30px;
+	text-transform: uppercase;
+
+	cursor: pointer;
+	transition: all 0.3s ease 0s;
+
+	&:hover {
+		color: #8a9a5b;
+		border: 2px solid darken(#808000, 20%);
+	}
+
+	@media (max-width: 1023px) {
+		width: 150px;
+	}
+
+	@media (max-width: 375px) {
+		width: 130px;
+	}
+}
+
+//======== content ================================================================================
+.content {
+	flex: 1 1 50%;
+	padding: 0px 20px;
+}
+
+.content__box {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	margin-top: 20px; //! отступ безопасности при адаптиве
+}
+
+.content__text {
+	text-align: center;
+	line-height: 40px;
+	font-size: 30px;
+
+	margin-bottom: 40px;
+}
+
+.content__author {
+	text-align: center;
+	font-size: 26px;
+
+	margin-bottom: 40px;
+}
+
+//================================================================================================
+
+// Подключение footer
+@import "_footer";
